@@ -128,9 +128,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione, neque?</p>
                 </div>
             </div>
-
-  
-
         </div>
     </div>
 @endsection

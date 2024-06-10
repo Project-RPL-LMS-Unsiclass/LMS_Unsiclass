@@ -31,7 +31,9 @@
 
         <!-- Sidebar - Unsiclass Log -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center rounded-pill" style="background-color: #7D0A0A " href="{{ url('/home') }}">
-            <div class="sidebar-brand-text mx-3">Unsiclass</div>
+            <div class="sidebar-brand-text mx-3">
+                <img src="{{ asset('img/unsiclasslogo.png') }}"" alt="Logo Unsiclass" width="125" height=" 20">
+            </div>
         </a>
 
         <!-- Divider -->
@@ -44,8 +46,8 @@
                 <span>{{ __('Dashboard') }}</span></a>
         </li>
         <!-- Nav Item - Kelas saya -->
-        <li class="nav-item {{ Nav::isRoute('home') }}">
-            <a class="nav-link" href="{{ route('home') }}">
+        <li class="nav-item {{ Nav::isRoute('kelas.index') }}">
+            <a class="nav-link" href="{{ route('kelas.index') }}">
                 <i class="fas fa-fw fa-graduation-cap"></i>
                 <span>{{ __('Kelas Saya') }}</span></a>
         </li>
@@ -147,7 +149,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; <a href="https://github.com/mgrzn" target="_blank">Mgrzn</a> {{ now()->year }}</span>
+                    <span>Copyright &copy; <a href="https://github.com/Project-RPL-LMS-Unsiclass" target="_blank">Unsiclass</a> {{ now()->year }}</span>
                 </div>
             </div>
         </footer>
