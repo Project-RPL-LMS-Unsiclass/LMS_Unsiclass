@@ -1,29 +1,29 @@
-@extends('layouts.admin')
-
-@section('main-content')
+<?php $__env->startSection('main-content'); ?>
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">{{ __('Dashboard') }}</h1>
+    <h1 class="h3 mb-4 text-gray-800"><?php echo e(__('Dashboard')); ?></h1>
 
-    @if (session('success'))
+    <?php if(session('success')): ?>
     <div class="alert alert-success border-left-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
+        <?php echo e(session('success')); ?>
+
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    @endif
+    <?php endif; ?>
 
-    @if (session('status'))
+    <?php if(session('status')): ?>
         <div class="alert alert-success border-left-success" role="alert">
-            {{ session('status') }}
+            <?php echo e(session('status')); ?>
+
         </div>
-    @endif
+    <?php endif; ?>
 
     <div class="row">
 
         <div class="card-body">
-            <h1>Hai Welcome! {{  Auth::user()->fullName }}</h1>
+            <h1>Hai Welcome! <?php echo e(Auth::user()->fullName); ?></h1>
             <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid repellendus itaque dolores consequuntur est velit?</h4>
         </div>
 
@@ -33,8 +33,8 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">{{ __('Users Count') }}</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $widget['users'] }}</div>
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1"><?php echo e(__('Users Count')); ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo e($widget['users']); ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -121,7 +121,7 @@
                 </div>
                 <div class="card-body">
                     <div class="text-center">
-                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{ asset('img/unsiclass.jpg') }}" alt="">
+                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="<?php echo e(asset('img/unsiclass.jpg')); ?>" alt="">
                     </div>
                     <h5>Lorem, ipsum dolor.</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, corrupti!</p>
@@ -130,4 +130,6 @@
             </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\LMS_Unsiclass\resources\views/home.blade.php ENDPATH**/ ?>
